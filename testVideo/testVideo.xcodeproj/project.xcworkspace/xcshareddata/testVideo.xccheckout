@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3BD000C1-1BB2-4DAD-B2F5-CADA35E29BB9</string>
+	<string>8AFE0384-2034-4749-A16D-C13C9C378812</string>
 	<key>IDESourceControlProjectName</key>
-	<string>testVideo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>
 		<string>https://github.com/sakokazuki/puchi_puchi_party.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>testVideo/testVideo.xcodeproj</string>
+	<string>testVideo/testVideo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>

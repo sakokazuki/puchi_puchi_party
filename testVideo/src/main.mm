@@ -9,4 +9,3 @@ int main(){
     ofSetupOpenGL(iOSWindow, 568, 320, OF_FULLSCREEN);
     ofRunApp(new ofApp);
 }
-

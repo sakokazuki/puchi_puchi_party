@@ -22,12 +22,16 @@ class ofApp : public ofxiOSApp {
         void gotFocus();
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
-
+    
+    ofTrueTypeFont font;
     ofxiOSVideoPlayer video0;
     ofxiOSVideoPlayer video1;
     bool play;
     int selectedVideo;
     ofxiOSVideoPlayer *player;
+    
+    bool eventFlag;
+
 };
 
 
