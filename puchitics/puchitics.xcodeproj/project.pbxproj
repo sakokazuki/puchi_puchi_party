@@ -10,9 +10,11 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		3D60CC6D1B74490F00081873 /* opening.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6B1B74490F00081873 /* opening.cpp */; };
-		3D60CC701B744BF000081873 /* home.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6E1B744BF000081873 /* home.cpp */; };
-		3D60CC731B75A79F00081873 /* sharedData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC711B75A79F00081873 /* sharedData.cpp */; };
+		3D60CC6D1B74490F00081873 /* opening.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6B1B74490F00081873 /* opening.mm */; };
+		3D60CC701B744BF000081873 /* home.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6E1B744BF000081873 /* home.mm */; };
+		3D60CC731B75A79F00081873 /* sharedData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC711B75A79F00081873 /* sharedData.mm */; };
+		3D60CC881B760D6000081873 /* Button.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC861B760D6000081873 /* Button.mm */; };
+		3D60CC8C1B76355400081873 /* Egg.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC8A1B76355400081873 /* Egg.mm */; };
 		5326AEA810A23A0500278DE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
 		53F323EB10A20EDB00E0DAE4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */; };
 		678E130817951530005B6D19 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 678E130717951530005B6D19 /* Icon@2x.png */; };
@@ -59,12 +61,16 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* ofxiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiOS_Prefix.pch; sourceTree = "<group>"; };
-		3D60CC6B1B74490F00081873 /* opening.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = opening.cpp; sourceTree = "<group>"; };
+		3D60CC6B1B74490F00081873 /* opening.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = opening.mm; sourceTree = "<group>"; };
 		3D60CC6C1B74490F00081873 /* opening.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opening.h; sourceTree = "<group>"; };
-		3D60CC6E1B744BF000081873 /* home.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = home.cpp; sourceTree = "<group>"; };
+		3D60CC6E1B744BF000081873 /* home.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = home.mm; sourceTree = "<group>"; };
 		3D60CC6F1B744BF000081873 /* home.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = home.h; sourceTree = "<group>"; };
-		3D60CC711B75A79F00081873 /* sharedData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sharedData.cpp; sourceTree = "<group>"; };
+		3D60CC711B75A79F00081873 /* sharedData.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sharedData.mm; sourceTree = "<group>"; };
 		3D60CC721B75A79F00081873 /* sharedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sharedData.h; sourceTree = "<group>"; };
+		3D60CC861B760D6000081873 /* Button.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Button.mm; sourceTree = "<group>"; };
+		3D60CC871B760D6000081873 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		3D60CC8A1B76355400081873 /* Egg.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Egg.mm; sourceTree = "<group>"; };
+		3D60CC8B1B76355400081873 /* Egg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Egg.h; sourceTree = "<group>"; };
 		5326AEA710A23A0500278DE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		678E130717951530005B6D19 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "bin/data/Icon@2x.png"; sourceTree = "<group>"; };
@@ -160,6 +166,15 @@
 			name = "core frameworks";
 			sourceTree = "<group>";
 		};
+		3D60CC891B76353800081873 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				3D60CC8A1B76355400081873 /* Egg.mm */,
+				3D60CC8B1B76355400081873 /* Egg.h */,
+			);
+			name = video;
+			sourceTree = "<group>";
+		};
 		4851D11FF22DECA849CB0054 /* ofxStateMachine */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,15 +239,18 @@
 		E4D8936A11527B74007E1F53 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				3D60CC891B76353800081873 /* video */,
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* ofApp.mm */,
 				E4D8936C11527B74007E1F53 /* ofApp.h */,
-				3D60CC6B1B74490F00081873 /* opening.cpp */,
+				3D60CC6B1B74490F00081873 /* opening.mm */,
 				3D60CC6C1B74490F00081873 /* opening.h */,
-				3D60CC6E1B744BF000081873 /* home.cpp */,
+				3D60CC6E1B744BF000081873 /* home.mm */,
 				3D60CC6F1B744BF000081873 /* home.h */,
-				3D60CC711B75A79F00081873 /* sharedData.cpp */,
+				3D60CC711B75A79F00081873 /* sharedData.mm */,
 				3D60CC721B75A79F00081873 /* sharedData.h */,
+				3D60CC861B760D6000081873 /* Button.mm */,
+				3D60CC871B760D6000081873 /* Button.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -341,10 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
-				3D60CC6D1B74490F00081873 /* opening.cpp in Sources */,
-				3D60CC701B744BF000081873 /* home.cpp in Sources */,
-				3D60CC731B75A79F00081873 /* sharedData.cpp in Sources */,
+				3D60CC6D1B74490F00081873 /* opening.mm in Sources */,
+				3D60CC8C1B76355400081873 /* Egg.mm in Sources */,
+				3D60CC701B744BF000081873 /* home.mm in Sources */,
+				3D60CC731B75A79F00081873 /* sharedData.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */,
+				3D60CC881B760D6000081873 /* Button.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,10 +383,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ofxiOS_Prefix.pch;
 				INFOPLIST_FILE = "ofxiOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/puchitics-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
@@ -374,10 +398,13 @@
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ofxiOS_Prefix.pch;
 				INFOPLIST_FILE = "ofxiOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				SWIFT_OBJC_BRIDGING_HEADER = "src/puchitics-Bridging-Header.h";
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;

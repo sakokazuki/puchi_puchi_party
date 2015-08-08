@@ -5,6 +5,8 @@
 #include "ofxState.h"
 #include "sharedData.h"
 
+#include "Button.h"
+
 class home: public itg::ofxState<sharedData>{
     
     void setup();
@@ -13,6 +15,14 @@ class home: public itg::ofxState<sharedData>{
     void touchDown(ofTouchEventArgs & touch);
     string getName();
     
+    int btnSize;
+    int btnSpace;
+    int colmn;
+    int row;
+    
+
+    vector<vector<Button> > button;
+    void callback(int &val);
     
 };
 

@@ -32,6 +32,7 @@ class ofApp : public ofxiOSApp {
     
     float *_buffer;
     
+    float *_subBuffer;
     fft _fft;
     
     float  _magnitude[BUFFER_SIZE];
@@ -39,6 +40,11 @@ class ofApp : public ofxiOSApp {
     float  _power[BUFFER_SIZE];
     float  _freq[NUM_WINDOWS][BUFFER_SIZE/2];
     
+    float _highpass[BUFFER_SIZE];
+    float  _magnitude2[BUFFER_SIZE];
+    float  _phase2[BUFFER_SIZE];
+    float  _power2[BUFFER_SIZE];
+    float  _freq2[NUM_WINDOWS][BUFFER_SIZE/2];
     
     ofSoundStream soundStream;
     

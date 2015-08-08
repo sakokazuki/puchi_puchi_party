@@ -3,8 +3,11 @@
 #include "opening.h"
 #include "home.h"
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetOrientation(OF_ORIENTATION_90_RIGHT);
+    ofSetCircleResolution(64);
     stateMachine.getSharedData().sharedInt = 100;
     
     stateMachine.addState<opening>();

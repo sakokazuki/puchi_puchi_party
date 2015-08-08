@@ -6,6 +6,8 @@
 #include "ofxState.h"
 #include "sharedData.h"
 
+#include "Button.h"
+
 class opening: public itg::ofxState<sharedData>{
     
     void setup();
@@ -15,8 +17,15 @@ class opening: public itg::ofxState<sharedData>{
     string getName();
     
     
+
+    
 public:
-    int hoge;
+    ofTrueTypeFont font;
+    void toHome();
+    
+    void callback(int &val);
+    Button button;
+
     
 };
 
