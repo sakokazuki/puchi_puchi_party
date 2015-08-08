@@ -5,14 +5,16 @@ void ofApp::setup(){
     ofSetFrameRate(30);
     ofBackground(255, 255, 255);
     ofSetOrientation(OF_ORIENTATION_90_RIGHT);
+    ofSetCircleResolution(32);
+    ofEnableSmoothing();
 
     
     font.loadFont("Arial.ttf", 30, true, true);
     
     video0.loadMovie("egg.MOV");
     video1.loadMovie("video0.mov");
-    video0.setLoopState(OF_LOOP_NORMAL);
-    video1.setLoopState(OF_LOOP_NORMAL);
+    video0.setLoopState(OF_LOOP_NONE);
+    video1.setLoopState(OF_LOOP_NONE);
     play = false;
     eventFlag = false;
     selectedVideo = 0;
@@ -26,11 +28,22 @@ void ofApp::setup(){
 void ofApp::update(){
     player->update();
     
-    if (player->getCurrentFrame() > 93 && !eventFlag) {
-        eventFlag = true;
-        play = true;
-        player->setPaused(true);
+    if (player->isFrameNew()) {
+        if (player->getCurrentFrame() > 93 && !eventFlag) {
+            eventFlag = true;
+            play = true;
+            player->setPaused(true);
+        }
+        
+        
     }
+    cout << player->getIsMovieDone() << endl;
+    if (player->getIsMovieDone()) {
+        eventFlag = false;
+        player->setFrame(0);
+        player->play();
+    }
+    
     
 }
 
@@ -45,12 +58,12 @@ void ofApp::draw(){
     
     if (play && eventFlag) {
         ofSetColor(255, 0, 0);
-        ofEllipse(449, 630, 100, 100);
+        
         
         ofPushMatrix();
-        ofTranslate(449+60, 600);
-        ofRotateZ(90);
-        font.drawString("touch!", 0, 0);
+        ofTranslate(610, 200);
+        font.drawString("touch!", -50, -60);
+        ofEllipse(0, 0, 100, 100);
         ofPopMatrix();
         
         
@@ -68,8 +81,11 @@ void ofApp::exit(){
 void ofApp::touchDown(ofTouchEventArgs & touch){
     cout << touch << endl;
     if(eventFlag){
-        play = false;
-        player->setPaused(play);
+        if (touch.x > 610-50 && touch.x < 610+50 && touch.y > 200-50 && touch.y < 200+50) {
+            play = false;
+            player->setPaused(play);
+        }
+        
     }
     
 }
