@@ -3,7 +3,6 @@
 
 //--------------------------------------------------------------
 void opening::setup(){
-    cout << this << endl;
     ofAddListener(button.event, this, &opening::callback);
     button.setup(ofVec2f(ofGetHeight()/2, ofGetWidth()/2), 118, 118, ofColor(231, 255, 67), 0, "circle");
     

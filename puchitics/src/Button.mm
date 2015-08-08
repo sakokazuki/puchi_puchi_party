@@ -9,6 +9,7 @@
 #include "Button.h"
 
 Button::Button(){
+    ofSetRectMode(OF_RECTMODE_CENTER);
     
 }
 
@@ -48,7 +49,6 @@ void Button::fireEvent(ofVec2f touch){
     if (shape == "circle"){
         if ((pos.x-touch.x) * (pos.x-touch.x) + (pos.y-touch.y) * (pos.y-touch.y) < width/2*width/2) {
             ofNotifyEvent(event, no);
-            cout << "notify: " << no << endl;
         }
     }
     

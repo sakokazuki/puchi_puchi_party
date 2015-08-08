@@ -60,7 +60,6 @@ void home::draw(){
 //--------------------------------------------------------------
 
 void home::touchDown(ofTouchEventArgs &touch){
-    cout << "--------------------------" << endl;
     ofVec2f touchPoint = ofVec2f(touch.x, touch.y);
     for (int i=0; i<row; i++) {
         for (int j=0; j<colmn; j++) {
@@ -71,7 +70,7 @@ void home::touchDown(ofTouchEventArgs &touch){
 }
 
 void home::callback(int &val){
-    cout << val << endl;
+    changeState("Egg");
 }
 
 
