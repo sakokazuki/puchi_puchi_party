@@ -6,8 +6,7 @@
 
 #include "fft.h"
 
-#define BUFFER_SIZE 256
-#define NUM_WINDOWS 80
+#define BUFFER_SIZE 1024
 
 class ofApp : public ofxiOSApp {
 	
@@ -31,23 +30,20 @@ class ofApp : public ofxiOSApp {
     void audioIn(float *input, int bufferSize, int nChannels);
     
     float *_buffer;
-    
-    float *_subBuffer;
+    float _tmpBuffer[BUFFER_SIZE];
+    float _saveBuffer[BUFFER_SIZE];
     fft _fft;
-    
+
+    float _highpass[BUFFER_SIZE];
     float  _magnitude[BUFFER_SIZE];
     float  _phase[BUFFER_SIZE];
     float  _power[BUFFER_SIZE];
-    float  _freq[NUM_WINDOWS][BUFFER_SIZE/2];
-    
-    float _highpass[BUFFER_SIZE];
-    float  _magnitude2[BUFFER_SIZE];
-    float  _phase2[BUFFER_SIZE];
-    float  _power2[BUFFER_SIZE];
-    float  _freq2[NUM_WINDOWS][BUFFER_SIZE/2];
     
     ofSoundStream soundStream;
-    
+
+    bool flag;
+    bool amountFlag;
+    bool touchFlag;
 
 };
 

@@ -14,89 +14,98 @@ void ofApp::setup(){
     ofSoundStreamSetup(0, 1, this, 44100, BUFFER_SIZE, 1);
     
     _buffer = new float[BUFFER_SIZE];
-    _subBuffer = new float[BUFFER_SIZE];
+    
+    flag = false;
+    amountFlag = false;
+    touchFlag = true;
     
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    if (touchFlag) {
+        
+        //波を平滑化してtmpBufferに補完
+        for (int i=0; i<BUFFER_SIZE; i++) {
+            if (i<BUFFER_SIZE-4) {
+                if (i<BUFFER_SIZE-4) {
+                    _tmpBuffer[i] = (abs(_buffer[i])+abs(_buffer[i+1])+abs(_buffer[i+2])+abs(_buffer[i+3])+abs(_buffer[i+4]))/5;
+                    
+                }else{
+                    _tmpBuffer[i] = abs(_buffer[i]);
+                }
+            }
+        }
+        
+        //flag:変化量
+        for (int i=1; i<BUFFER_SIZE-4; i++) {
+            if (_tmpBuffer[i]-_tmpBuffer[i-1] > 0.08) {
+                cout << "val    " << i << " : " << _tmpBuffer[i]-_tmpBuffer[i-1] << endl;
+                flag = true;
+            }
+        }
+        
+        //flag:音量
+        
+        for (int i=0; i<BUFFER_SIZE; i++) {
+//            cout << "amount " << i << " : " << abs(_buffer[i]) << endl;
+            if (abs(_buffer[i]) > 0.4) {
+                cout << "amount " << i << " : " << abs(_buffer[i]) << endl;
+                amountFlag = true;
+            }
+        }
+        
+        //保存する波はtmpBufferからsaveBufferへ
+        if (flag || amountFlag) {
+            for (int i=0; i<BUFFER_SIZE; i++) {
+                _saveBuffer[i] = _tmpBuffer[i];
+            }
+        }
 
+    }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackground(0);
     
-    float avg_power = 0.0f;
-    
-    ofSetColor(255);
-    
-    _fft.powerSpectrum(0, (int)BUFFER_SIZE/2, _buffer, BUFFER_SIZE, &_magnitude[0], &_phase[0], &_power[0], &avg_power);
-    
-    float width = (float)ofGetWidth() / (float)(BUFFER_SIZE/2-1);
-    for(int i = 1; i < (int)(BUFFER_SIZE); i++){
+    if (touchFlag) {
         ofSetColor(255);
-        ofRect((i - 1)*width, ofGetHeight(), width, -(_magnitude[i] * 200.0));
+        
+        //今の音の波形
+        float y1 = ofGetHeight() * 0.5;
+        ofLine(0, y1, ofGetWidth(), y1);
+//        for(int i=0; i<BUFFER_SIZE; i++){
+//            float p = i / (float)(BUFFER_SIZE-1);
+//            float x = p * ofGetWidth();
+//            float y2 = y1 + _buffer[i] * 200;
+//            ofLine(x, y1, x, y2);
+//        }
+        
+        //反応した時の波形(saveBuffer)
+        for(int i=1; i<BUFFER_SIZE; i++){
+            float p = i / (float)(BUFFER_SIZE-1);
+            float x = p * ofGetWidth();
+            float y2 = y1 + _saveBuffer[i] * 200 * -1;
+            ofSetColor(255, 255, 0);
+            ofLine(x, y1, x, y2);
+            if (i%50 == 0) {
+                ofSetColor(255);
+                ofLine(x, 0, x, ofGetWidth());
+                ofDrawBitmapString(ofToString(i), x+3, 10);
+            }
+            
+        }
+        
+        if (flag || amountFlag) {
+            cout << "--------------" << endl;
+        }
+        
+        flag = false;
+        amountFlag = false;
+    
     }
-    
-    
-    for(int i = 0; i < BUFFER_SIZE; i++){
-        float freq = 3000;
-        float q    = 1.0;
-        float omega = 2.0f * 3.14159265f *  freq / 44100;
-        float alpha = sin(omega) / (2.0f * q);
-        float in1, in2, out1, out2;
-        
-        //        float a0 =  1.0f + alpha;
-        //        float a1 = -2.0f * cos(omega);
-        //        float a2 =  1.0f - alpha;
-        //        float b0 = (1.0f - cos(omega)) / 2.0f;
-        //        float b1 =  1.0f - cos(omega);
-        //        float b2 = (1.0f - cos(omega)) / 2.0f;
-        
-        float a0 =   1.0f + alpha;
-        float a1 =  -2.0f * cos(omega);
-        float a2 =   1.0f - alpha;
-        float b0 =  (1.0f + cos(omega)) / 2.0f;
-        float b1 = -(1.0f + cos(omega));
-        float b2 =  (1.0f + cos(omega)) / 2.0f;
-        
-        _subBuffer[i] = b0/a0 * _buffer[i] + b1/a0 * in1  + b2/a0 * in2 - a1/a0 * out1 - a2/a0 * out2;
-        
-        in2  = in1;
-        in1  = _buffer[i];
-        
-        out2 = out1;
-        out1 = _subBuffer[i];
-    }
-    
-    _fft.powerSpectrum(0, (int)BUFFER_SIZE/2, _subBuffer, BUFFER_SIZE, &_magnitude2[0], &_phase2[0], &_power2[0], &avg_power);
-    
-    
-    for(int i = 1; i < (int)(BUFFER_SIZE); i++){
-        ofSetColor(255, 0, 0);
-        ofRect((i - 1)*width, ofGetHeight(), width, -(_magnitude2[i] * 200.0));
-    }
-    
-    
-
-    
-    
-    
-    float y1 = ofGetHeight() * 0.5;
-    ofLine(0, y1, ofGetWidth(), y1);
-    
-    for(int i=0; i<BUFFER_SIZE; i++){
-        float p = i / (float)(BUFFER_SIZE-1);
-        float x = p * ofGetWidth();
-        float y2 = y1 + _buffer[i] * 200;
-        
-        ofLine(x, y1, x, y2);
-    }
-
-    
-    
-    
     
 }
 
@@ -106,14 +115,17 @@ void ofApp::exit(){
 }
 
 void ofApp::audioIn(float *input, int bufferSize, int nChannels){
-    int minBufferSize = MIN(BUFFER_SIZE, bufferSize);
-    for (int i=0; i<minBufferSize; i++) {
-        _buffer[i]  = input[i];
+    if (touchFlag) {
+        int minBufferSize = MIN(BUFFER_SIZE, bufferSize);
+        for (int i=0; i<minBufferSize; i++) {
+            _buffer[i]  = input[i];
+        }
     }
 }
 
 //--------------------------------------------------------------
 void ofApp::touchDown(ofTouchEventArgs & touch){
+    touchFlag = true;
 
 }
 
