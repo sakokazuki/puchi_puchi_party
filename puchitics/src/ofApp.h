@@ -26,6 +26,7 @@ class ofApp : public ofxiOSApp {
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
     
+    
     itg::ofxStateMachine<sharedData> stateMachine;
 
 };

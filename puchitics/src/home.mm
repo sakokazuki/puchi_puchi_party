@@ -51,10 +51,6 @@ void home::draw(){
         }
     }
     
-    
-    
-    ofSetColor(30);
-    ofDrawBitmapString("home", 20, 20);
 }
 
 //--------------------------------------------------------------
@@ -70,7 +66,23 @@ void home::touchDown(ofTouchEventArgs &touch){
 }
 
 void home::callback(int &val){
-    changeState("Egg");
+    cout << val << endl;
+    getSharedData().startMovie = true;
+    if (val == 1) {
+        getSharedData().movieName = "egg.mov";
+        getSharedData().stopPoint = 93;
+        getSharedData().bStopPoint = true;
+        getSharedData().touchPoint = ofVec2f(610, 200);
+    }else if(val == 6){
+        getSharedData().movieName = "tomato.mp4";
+        getSharedData().stopPoint = 35;
+        getSharedData().bStopPoint = true;
+        getSharedData().touchPoint = ofVec2f(560, 180);
+    }else{
+        getSharedData().movieName = "purin.mp4";
+        getSharedData().bStopPoint = false;
+    }
+    changeState("MovieScene");
 }
 
 

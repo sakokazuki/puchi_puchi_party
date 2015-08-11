@@ -2,8 +2,7 @@
 
 #include "opening.h"
 #include "home.h"
-#include "Egg.h"
-
+#include "MovieScene.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -13,7 +12,7 @@ void ofApp::setup(){
     
     stateMachine.addState<opening>();
     stateMachine.addState<home>();
-    stateMachine.addState<Egg>();
+    stateMachine.addState<MovieScene>();
     
     stateMachine.changeState("opening");
 }

@@ -16,9 +16,7 @@ class opening: public itg::ofxState<sharedData>{
     void touchDown(ofTouchEventArgs & touch);
     string getName();
     
-    
 
-    
 public:
     ofTrueTypeFont font;
     void toHome();

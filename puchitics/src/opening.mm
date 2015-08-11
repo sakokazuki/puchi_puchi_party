@@ -21,8 +21,6 @@ void opening::draw(){
     
     button.draw();
     
-    ofSetColor(30);
-    ofDrawBitmapString("opening", 20, 20);
 }
 
 //--------------------------------------------------------------
