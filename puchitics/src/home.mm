@@ -21,7 +21,7 @@ void home::setup(){
                 btnPos = ofVec2f(i*(btnSize+btnSpace)+(btnSize+btnSpace)/2, j*(btnSize+btnSpace));
             }
     
-            button[i][j].setup(btnPos, btnSize, btnSize, ofColor(231, 255, 67), no, "circle");
+            button[i][j].setup(btnPos, btnSize, btnSize, ofColor(231, 255, 67), ofColor(0, 90, 120), no, "circle");
             
             no++;
         }

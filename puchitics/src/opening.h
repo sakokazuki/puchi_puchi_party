@@ -7,7 +7,6 @@
 #include "sharedData.h"
 
 #include "Button.h"
-#include "PuchiSound.h"
 
 
 class opening: public itg::ofxState<sharedData>{
@@ -16,6 +15,7 @@ class opening: public itg::ofxState<sharedData>{
     void update();
     void draw();
     void touchDown(ofTouchEventArgs & touch);
+    void touchUp(ofTouchEventArgs & touch);
     string getName();
     
 
@@ -25,9 +25,11 @@ public:
     void toHome();
     
     void callback(int &val);
+    void touchUpEventCallback(int &val);
     Button button;
     
-    PuchiSound sound;
+    bool bHoverButton;
+    
 
     
 };

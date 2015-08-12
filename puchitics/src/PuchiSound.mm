@@ -5,7 +5,6 @@
 PuchiSound::PuchiSound(){
     volumeFlag = false;
     variationFlag = false;
-    bSound = false;
     cout << "in" << endl;
     ofSoundStreamSetup(0, 1, this, 44100, BUFFER_SIZE, 1);
 }
@@ -46,7 +45,6 @@ void PuchiSound::update(){
     //保存する波はtmpBufferからsaveBufferへ
     if (variationFlag || volumeFlag) {
         for (int i=0; i<BUFFER_SIZE; i++) {
-            bSound = true;
             saveBuffer[i] = tmpBuffer[i];
         }
     }

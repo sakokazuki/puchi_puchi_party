@@ -24,5 +24,9 @@ public:
     };
     
     ofxiOSVideoPlayer loadedVideo;
+    
+    bool bUseAudio = true;
+    bool bPuchi = false;
+    bool bSoundDebug = false;
 };
 #endif /* defined(__puchitics__sharedData__) */

@@ -12,7 +12,6 @@
 #include "ofxState.h"
 #include "sharedData.h"
 
-#include "PuchiSound.h"
 
 
 class SoundDebug: public itg::ofxState<sharedData>{
@@ -26,7 +25,6 @@ class SoundDebug: public itg::ofxState<sharedData>{
     
     
 public:
-    PuchiSound sound;
     
     
 };

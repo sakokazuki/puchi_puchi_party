@@ -29,9 +29,6 @@ public:
     
     bool volumeFlag;
     bool variationFlag;
-    
-    bool bSound;
-    
 };
 
 #endif /* defined(__puchitics__PuchiSound__) */

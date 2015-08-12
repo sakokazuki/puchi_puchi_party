@@ -9,14 +9,14 @@ void SoundDebug::setup(){
 
 //--------------------------------------------------------------
 void SoundDebug::update(){
-    sound.update();
-    cout << sound.bSound << endl;
+    if (!getSharedData().bSoundDebug) {
+        getSharedData().bSoundDebug = true;
+    }
     
 }
 
 //--------------------------------------------------------------
 void SoundDebug::draw(){
-    sound.draw();
 
 }
 
