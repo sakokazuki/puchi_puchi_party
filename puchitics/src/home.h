@@ -24,6 +24,9 @@ class home: public itg::ofxState<sharedData>{
     vector<vector<Button> > button;
     void callback(int &val);
     
+    
+    
+    
 };
 
 #endif /* defined(__puchitics__home__) */

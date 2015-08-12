@@ -3,6 +3,7 @@
 #include "opening.h"
 #include "home.h"
 #include "MovieScene.h"
+#include "SoundDebug.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
@@ -13,6 +14,7 @@ void ofApp::setup(){
     stateMachine.addState<opening>();
     stateMachine.addState<home>();
     stateMachine.addState<MovieScene>();
+    stateMachine.addState<SoundDebug>();
     
     stateMachine.changeState("opening");
 }

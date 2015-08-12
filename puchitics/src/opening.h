@@ -7,6 +7,8 @@
 #include "sharedData.h"
 
 #include "Button.h"
+#include "PuchiSound.h"
+
 
 class opening: public itg::ofxState<sharedData>{
     
@@ -17,12 +19,15 @@ class opening: public itg::ofxState<sharedData>{
     string getName();
     
 
+    
 public:
     ofTrueTypeFont font;
     void toHome();
     
     void callback(int &val);
     Button button;
+    
+    PuchiSound sound;
 
     
 };

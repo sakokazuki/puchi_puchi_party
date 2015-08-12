@@ -10,6 +10,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		3D4A807A1B7B8B1200894C9C /* PuchiSound.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A80781B7B8B1200894C9C /* PuchiSound.mm */; };
+		3D4A80801B7B9C7200894C9C /* SoundDebug.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D4A807E1B7B9C7200894C9C /* SoundDebug.mm */; };
 		3D60CC6D1B74490F00081873 /* opening.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6B1B74490F00081873 /* opening.mm */; };
 		3D60CC701B744BF000081873 /* home.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC6E1B744BF000081873 /* home.mm */; };
 		3D60CC731B75A79F00081873 /* sharedData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC711B75A79F00081873 /* sharedData.mm */; };
@@ -61,6 +63,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* ofxiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiOS_Prefix.pch; sourceTree = "<group>"; };
+		3D4A80781B7B8B1200894C9C /* PuchiSound.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PuchiSound.mm; sourceTree = "<group>"; };
+		3D4A80791B7B8B1200894C9C /* PuchiSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuchiSound.h; sourceTree = "<group>"; };
+		3D4A807E1B7B9C7200894C9C /* SoundDebug.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundDebug.mm; sourceTree = "<group>"; };
+		3D4A807F1B7B9C7200894C9C /* SoundDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundDebug.h; sourceTree = "<group>"; };
 		3D60CC6B1B74490F00081873 /* opening.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = opening.mm; sourceTree = "<group>"; };
 		3D60CC6C1B74490F00081873 /* opening.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opening.h; sourceTree = "<group>"; };
 		3D60CC6E1B744BF000081873 /* home.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = home.mm; sourceTree = "<group>"; };
@@ -166,6 +172,34 @@
 			name = "core frameworks";
 			sourceTree = "<group>";
 		};
+		3D4A80811B7BA46700894C9C /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				3D60CCEE1B78F9F000081873 /* MovieScene.mm */,
+				3D60CCEF1B78F9F000081873 /* MovieScene.h */,
+				3D60CC6B1B74490F00081873 /* opening.mm */,
+				3D60CC6C1B74490F00081873 /* opening.h */,
+				3D60CC6E1B744BF000081873 /* home.mm */,
+				3D60CC6F1B744BF000081873 /* home.h */,
+				3D4A807E1B7B9C7200894C9C /* SoundDebug.mm */,
+				3D4A807F1B7B9C7200894C9C /* SoundDebug.h */,
+			);
+			name = scene;
+			sourceTree = "<group>";
+		};
+		3D4A80821B7BA4B700894C9C /* util */ = {
+			isa = PBXGroup;
+			children = (
+				3D60CC711B75A79F00081873 /* sharedData.mm */,
+				3D60CC721B75A79F00081873 /* sharedData.h */,
+				3D60CC861B760D6000081873 /* Button.mm */,
+				3D60CC871B760D6000081873 /* Button.h */,
+				3D4A80781B7B8B1200894C9C /* PuchiSound.mm */,
+				3D4A80791B7B8B1200894C9C /* PuchiSound.h */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
 		4851D11FF22DECA849CB0054 /* ofxStateMachine */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,16 +267,8 @@
 				E4D8936B11527B74007E1F53 /* main.mm */,
 				E4D8936D11527B74007E1F53 /* ofApp.mm */,
 				E4D8936C11527B74007E1F53 /* ofApp.h */,
-				3D60CC6B1B74490F00081873 /* opening.mm */,
-				3D60CC6C1B74490F00081873 /* opening.h */,
-				3D60CC6E1B744BF000081873 /* home.mm */,
-				3D60CC6F1B744BF000081873 /* home.h */,
-				3D60CC711B75A79F00081873 /* sharedData.mm */,
-				3D60CC721B75A79F00081873 /* sharedData.h */,
-				3D60CC861B760D6000081873 /* Button.mm */,
-				3D60CC871B760D6000081873 /* Button.h */,
-				3D60CCEE1B78F9F000081873 /* MovieScene.mm */,
-				3D60CCEF1B78F9F000081873 /* MovieScene.h */,
+				3D4A80821B7BA4B700894C9C /* util */,
+				3D4A80811B7BA46700894C9C /* scene */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -351,12 +377,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
+				3D4A807A1B7B8B1200894C9C /* PuchiSound.mm in Sources */,
 				3D60CC6D1B74490F00081873 /* opening.mm in Sources */,
 				3D60CC701B744BF000081873 /* home.mm in Sources */,
 				3D60CC731B75A79F00081873 /* sharedData.mm in Sources */,
 				3D60CCF01B78F9F000081873 /* MovieScene.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */,
 				3D60CC881B760D6000081873 /* Button.mm in Sources */,
+				3D4A80801B7B9C7200894C9C /* SoundDebug.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

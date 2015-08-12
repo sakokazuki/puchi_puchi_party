@@ -11,11 +11,13 @@ void opening::setup(){
 
 //--------------------------------------------------------------
 void opening::update(){
-    
+    sound.update();
+    cout << sound.bSound << endl;
 }
 
 //--------------------------------------------------------------
 void opening::draw(){
+    
     ofBackground(60,220,250);
 
     

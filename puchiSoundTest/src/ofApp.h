@@ -39,7 +39,7 @@ class ofApp : public ofxiOSApp {
     float  _phase[BUFFER_SIZE];
     float  _power[BUFFER_SIZE];
     
-    ofSoundStream soundStream;
+//    ofSoundStream soundStream;
 
     bool flag;
     bool amountFlag;
