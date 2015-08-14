@@ -46,9 +46,6 @@ class ofApp : public ofxiOSApp {
     
     bool volumeFlag;
     bool variationFlag;
-    
-    
-
 };
 
 

@@ -7,6 +7,8 @@
 
 class sharedData{
 public:
+    void btnSetup();
+    
     
     int sharedInt;
     bool startMovie = false;
@@ -28,5 +30,13 @@ public:
     bool bUseAudio = true;
     bool bPuchi = false;
     bool bSoundDebug = false;
+    
+    int btnSize;
+    int btnSpace;
+    int colmn;
+    int row ;
+    vector<ofVec2f> btnPos;
+    
+    
 };
 #endif /* defined(__puchitics__sharedData__) */

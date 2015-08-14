@@ -16,10 +16,12 @@ void ofApp::setup(){
     stateMachine.addState<MovieScene>();
     stateMachine.addState<SoundDebug>();
     
-    stateMachine.changeState("opening");
+    stateMachine.changeState("home");
     ofSoundStreamSetup(0, 1, this, 44100, BUFFER_SIZE, 1);
     
     _buffer = new float[BUFFER_SIZE];
+    
+    
 
 }
 

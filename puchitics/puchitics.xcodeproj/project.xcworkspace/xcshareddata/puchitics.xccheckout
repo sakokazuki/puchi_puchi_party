@@ -7,39 +7,27 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A603619E-FBCC-49C1-8EF5-574D4161E08B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>puchitics</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5431C3098324239824B3A313883F8CE1A84C3E6A</key>
-		<string>https://github.com/neilmendoza/ofxStateMachine.git</string>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>
-		<string>https://github.com/sakokazuki/puchi_puchi_party.git</string>
+		<string>github.com:sakokazuki/puchi_puchi_party.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>puchitics/puchitics.xcodeproj</string>
+	<string>puchitics/puchitics.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5431C3098324239824B3A313883F8CE1A84C3E6A</key>
-		<string>../../../../addons/ofxStateMachine</string>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sakokazuki/puchi_puchi_party.git</string>
+	<string>github.com:sakokazuki/puchi_puchi_party.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>5D18099EB38C7436992AEA3482F7598304A91DAC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5431C3098324239824B3A313883F8CE1A84C3E6A</string>
-			<key>IDESourceControlWCCName</key>
-			<string>ofxStateMachine</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

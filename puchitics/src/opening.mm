@@ -4,8 +4,8 @@
 //--------------------------------------------------------------
 void opening::setup(){
     ofAddListener(button.event, this, &opening::callback);
-    ofAddListener(button.event, this, &opening::touchUpEventCallback);
-    button.setup(ofVec2f(ofGetHeight()/2, ofGetWidth()/2), 118, 118, ofColor(231, 255, 67), ofColor(0, 90, 120), 0, "circle");
+    ofAddListener(button.event2, this, &opening::touchUpEventCallback);
+    button.setup(ofVec2f(ofGetHeight()/2, ofGetWidth()/2), 118, 118, ofColor(231, 255, 67), ofColor(0, 90, 120), 0);
     
     ofSetRectMode(OF_RECTMODE_CENTER);
     bHoverButton = false;
@@ -13,9 +13,7 @@ void opening::setup(){
 
 //--------------------------------------------------------------
 void opening::update(){
-//    cout << bHoverButton << endl;
     if (getSharedData().bPuchi) {
-        cout << bHoverButton << endl;
         if (bHoverButton) {
             changeState("home");
         }
@@ -38,30 +36,21 @@ void opening::draw(){
 //--------------------------------------------------------------
 
 void opening::touchDown(ofTouchEventArgs &touch){
-
-    ofVec2f touchPoint = ofVec2f(touch.x, touch.y);    
-    button.fireEvent(touchPoint);
-    
-    
-    
+    button.fireEvent();
 }
 
 void opening::touchUp(ofTouchEventArgs &touch){
-    ofVec2f touchPoint = ofVec2f(touch.x, touch.y);
-    button.touchUpEvent(touchPoint);
-    
+    button.touchUpEvent();
 }
 
 void opening::callback(int &val){
 //    changeState("home");
     bHoverButton = true;
-    cout << "touch" << endl;
+    
 }
 
 void opening::touchUpEventCallback(int &val){
     bHoverButton = false;
-    cout << "touchup" << endl;
-    
     
 }
 

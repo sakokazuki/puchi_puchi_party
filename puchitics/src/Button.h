@@ -14,7 +14,7 @@
 class Button {
 public:
     Button();
-    void setup(ofVec2f p, int w, int h, ofColor col, ofColor hoverCol, int _no, string _shape);
+    void setup(ofVec2f p, int w, int h, ofColor col, ofColor hoverCol, int _no);
     void draw();
     
 
@@ -24,11 +24,11 @@ public:
     ofColor color;
     ofColor hoverColor;
     int no;
-    string shape;
     
     ofEvent<int> event;
-    void fireEvent(ofVec2f touch);
-    void touchUpEvent(ofVec2f touch);
+    ofEvent<int> event2;
+    void fireEvent();
+    void touchUpEvent();
     bool bHover;
     int hoverWidth;
     

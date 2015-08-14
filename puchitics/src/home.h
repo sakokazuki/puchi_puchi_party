@@ -13,6 +13,7 @@ class home: public itg::ofxState<sharedData>{
     void update();
     void draw();
     void touchDown(ofTouchEventArgs & touch);
+    void touchUp(ofTouchEventArgs & touch);
     string getName();
     
     int btnSize;
@@ -20,11 +21,14 @@ class home: public itg::ofxState<sharedData>{
     int colmn;
     int row;
     
-
+    vector<Button> buttons;
     vector<vector<Button> > button;
+
     void callback(int &val);
+    void touchUpEventCallback(int &val);
     
-    
+    bool bHoverButton;
+    int targetBtnNo;
     
     
 };

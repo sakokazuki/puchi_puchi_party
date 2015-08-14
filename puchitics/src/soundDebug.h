@@ -22,7 +22,7 @@ class SoundDebug: public itg::ofxState<sharedData>{
     void touchDown(ofTouchEventArgs & touch);
     string getName();
     
-    
+
     
 public:
     
