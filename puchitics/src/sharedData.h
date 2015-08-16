@@ -35,7 +35,9 @@ public:
     bool bSoundDebug = false;
     
     int btnSize;
-    int btnSpace;
+    int btnSpaceX;
+    int btnSpaceY;
+    ofVec2f btnBeginPoint;
     int colmn;
     int row ;
     vector<ofVec2f> btnPos;

@@ -29,6 +29,8 @@ class home: public itg::ofxState<sharedData>{
     bool bHoverButton;
     int targetBtnNo;
     
+    ofImage img;
+    
     
 };
 

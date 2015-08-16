@@ -7,7 +7,8 @@ void home::setup(){
     colmn = 5;
     row = 10;
     bHoverButton = false;
-
+    img.loadImage("select.png");
+    ofSetRectMode(OF_RECTMODE_CORNER);
 
     
   
@@ -37,6 +38,8 @@ void home::draw(){
     for (int i=0; i<getSharedData().button.size(); i++) {
         getSharedData().button[i].draw();
     }
+    ofSetColor(255, 200);
+//    img.draw(0, 0);
     
 }
 
