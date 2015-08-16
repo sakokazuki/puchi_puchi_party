@@ -18,6 +18,7 @@ class MovieScene: public itg::ofxState<sharedData>{
     void update();
     void draw();
     void touchDown(ofTouchEventArgs & touch);
+    void touchUp(ofTouchEventArgs & touch);
     string getName();
     
     ofTrueTypeFont font;
@@ -31,6 +32,11 @@ class MovieScene: public itg::ofxState<sharedData>{
     int stopPoint;
     bool bStopPoint;
     ofVec2f touchPoint;
+    int btnNo;
+    
+    void callback(int &val);
+    void touchUpEventCallback(int &val);
+    bool bHoverButton;
     
 };
 

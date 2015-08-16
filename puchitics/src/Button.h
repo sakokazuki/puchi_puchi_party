@@ -14,21 +14,23 @@
 class Button {
 public:
     Button();
-    void setup(ofVec2f p, int w, int h, ofColor col, ofColor hoverCol, int _no);
+    void setup(ofVec2f p, int w, int h, int _no);
     void draw();
     
 
     ofVec2f pos;
     int width;
     int height;
-    ofColor color;
-    ofColor hoverColor;
     int no;
+    bool bTouched;
     
-    ofEvent<int> event;
-    ofEvent<int> event2;
-    void fireEvent();
-    void touchUpEvent();
+    ofEvent<int> downEvent;
+    ofEvent<int> upEvent;
+    vector< ofEvent<int> > downEvents;
+    vector< ofEvent<int> > upEvents;
+    
+    void touchDownEvent(int scene);
+    void touchUpEvent(int scene);
     bool bHover;
     int hoverWidth;
     

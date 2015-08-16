@@ -175,12 +175,12 @@
 		3D4A80811B7BA46700894C9C /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				3D60CCEE1B78F9F000081873 /* MovieScene.mm */,
-				3D60CCEF1B78F9F000081873 /* MovieScene.h */,
 				3D60CC6B1B74490F00081873 /* opening.mm */,
 				3D60CC6C1B74490F00081873 /* opening.h */,
 				3D60CC6E1B744BF000081873 /* home.mm */,
 				3D60CC6F1B744BF000081873 /* home.h */,
+				3D60CCEE1B78F9F000081873 /* MovieScene.mm */,
+				3D60CCEF1B78F9F000081873 /* MovieScene.h */,
 				3D4A807E1B7B9C7200894C9C /* SoundDebug.mm */,
 				3D4A807F1B7B9C7200894C9C /* SoundDebug.h */,
 			);

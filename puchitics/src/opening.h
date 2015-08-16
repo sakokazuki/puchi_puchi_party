@@ -26,11 +26,6 @@ public:
     
     void callback(int &val);
     void touchUpEventCallback(int &val);
-    Button button;
-    
-    bool bHoverButton;
-    
-
     
 };
 

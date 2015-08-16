@@ -13,7 +13,7 @@ void MovieScene::setup(){
 void MovieScene::update(){
     
     
-
+    //movie scene start setup
     if (getSharedData().startMovie) {
         ofSetRectMode(OF_RECTMODE_CORNER);
         
@@ -23,12 +23,17 @@ void MovieScene::update(){
         stopPoint = getSharedData().stopPoint;
         bStopPoint = getSharedData().bStopPoint;
         touchPoint = getSharedData().touchPoint;
+        btnNo = getSharedData().trgBtnNo;
         
         getSharedData().loadedVideo.loadMovie(movieName);
         player = &getSharedData().loadedVideo;
         player->play();
         loadMovie = false;
+
         cout << "play!" << endl;
+        
+        
+        
         
     }
     
@@ -47,10 +52,24 @@ void MovieScene::update(){
         }
     }
     
+    if (play && eventFlag) {
+        if (getSharedData().bPuchi) {
+            if (getSharedData().bHoverButton) {
+                getSharedData().bHoverButton = false;
+
+                play = false;
+                player->setPaused(play);
+            }
+            cout << "puchi" << endl;
+            getSharedData().bPuchi = false;
+        }
+    }
+    
     if (player->getIsMovieDone()) {
         eventFlag = false;
         player->setFrame(0);
         player->play();
+        getSharedData().button[btnNo].bTouched = true;
         getSharedData().loadedVideo.close();
         changeState("home");
     }
@@ -72,9 +91,8 @@ void MovieScene::draw(){
     if (play && eventFlag) {
         ofSetColor(231, 255, 67);
         
-        
         ofPushMatrix();
-        ofTranslate(touchPoint);
+        ofTranslate(getSharedData().button[btnNo].pos);
         font.drawString("touch!", -50, -60);
         ofEllipse(0, 0, 100, 100);
         ofPopMatrix();
@@ -88,17 +106,44 @@ void MovieScene::draw(){
 void MovieScene::touchDown(ofTouchEventArgs &touch){
     cout << touch << endl;
     if(eventFlag){
-        if (touch.x > touchPoint.x-50 && touch.x < touchPoint.x+50 && touch.y > touchPoint.y-50 && touch.y < touchPoint.y+50){
-            play = false;
-            player->setPaused(play);
+        ofVec2f tP = getSharedData().button[btnNo].pos;
+        if (touch.x > tP.x-50 && touch.x < tP.x+50 && touch.y > tP.y-50 && touch.y < tP.y+50){
+//            play = false;
+//            player->setPaused(play);
+            getSharedData().button[btnNo].touchDownEvent(2);
+            cout << "touchDown movie" << endl;
         }
         
     }
 
 }
 
+void MovieScene::touchUp(ofTouchEventArgs &touch){
+    if(eventFlag){
+        ofVec2f tP = getSharedData().button[btnNo].pos;
+        if (touch.x > tP.x-50 && touch.x < tP.x+50 && touch.y > tP.y-50 && touch.y < tP.y+50){
+            getSharedData().button[btnNo].touchUpEvent(2);
+        }
+        
+    }
+}
+//
+//void MovieScene::callback(int &val){
+//    //    changeState("home");
+////    bHoverButton = true;
+//    cout << "touch down movie scene" << endl;
+//    
+//}
+//
+//void MovieScene::touchUpEventCallback(int &val){
+////    bHoverButton = false;
+//    cout << "touch up movie scene" << endl;
+//    
+//}
 
 
 string MovieScene::getName(){
     return "MovieScene";
 }
+
+
