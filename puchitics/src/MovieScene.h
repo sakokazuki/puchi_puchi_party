@@ -31,12 +31,14 @@ class MovieScene: public itg::ofxState<sharedData>{
     string movieName;
     int stopPoint;
     bool bStopPoint;
-    ofVec2f touchPoint;
     int btnNo;
     
     void callback(int &val);
     void touchUpEventCallback(int &val);
     bool bHoverButton;
+    
+    ofVec2f scale;
+    ofVec2f translate;
     
 };
 

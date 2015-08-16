@@ -65,20 +65,20 @@ void sharedData::touchUpEventCbOp(int &val){
 void sharedData::touchDownEventCbHome(int &val){
     cout << "sharedData(home) touchDown: " << val << endl;
     startMovie = true;
-    if (val == 1) {
+    if (val == 6) {
         movieName = "egg.mov";
         stopPoint = 93;
-        bStopPoint = true;
-        touchPoint = ofVec2f(610, 200);
-        trgBtnNo = 16;
-    }else if(val == 6){
+        
+        movieChoose(ofVec2f(1068, 352));
+        
+    }else if(val == 11){
         movieName = "tomato.mp4";
         stopPoint = 35;
-        bStopPoint = true;
-        touchPoint = ofVec2f(560, 180);
+        
+        movieChoose(ofVec2f(884, 296));
+        
     }else{
-        movieName = "purin.mp4";
-        bStopPoint = false;
+        randomMovieChoose();
     }
     bHoverButton = true;
     targetBtnNo = val;
@@ -99,6 +99,47 @@ void sharedData::touchDownEventCbMv(int &val){
 void sharedData::touchUpEventCbMv(int &val){
     cout << "sharedData(mv) touchUp: " << val << endl;
     bHoverButton = false;
+}
+
+void sharedData::movieChoose(ofVec2f p){
+    bStopPoint = true;
+    touchPoint = ofVec2f(p.x/1920.0*(ofGetWidth()+magnifySize.x)-magnifySize.x/2,
+                         p.y/1080.0*(ofGetHeight()+magnifySize.y)-magnifySize.y/2);
+    int nearly = searchNearlyBtn(touchPoint);
+    trgBtnNo = nearly;
+    cout  << "nearybtn :" << nearly << endl;
+    movieTrans = button[nearly].pos - touchPoint;
+    if (nearly == -1) {
+        randomMovieChoose();
+    }
+}
+
+void sharedData::randomMovieChoose(){
+    bStopPoint = false;
+    
+    movieTrans = ofVec2f(0, 0);
+    movieName = "purin.mp4";
+}
+
+
+int sharedData::searchNearlyBtn(ofVec2f trg){
+    float min = (trg-button[0].pos).length();
+    int btnNo = 0;
+    for (int i=1; i<button.size(); i++) {
+        if (!button[i].bTouched) {
+            float tmp = (trg-button[i].pos).length();
+            if (tmp < min) {
+                min = tmp;
+                btnNo = i;
+            }
+        }
+    }
+    
+    if (abs(trg.x - button[btnNo].pos.x) < magnifySize.x/2 && abs(trg.y - button[btnNo].pos.y) < magnifySize.y/2) {
+        return btnNo;
+    }else{
+        return -1;
+    }
 }
 
 

@@ -56,5 +56,11 @@ public:
     
     int targetBtnNo;
     
+    int searchNearlyBtn(ofVec2f trg);
+    void randomMovieChoose();
+    void movieChoose(ofVec2f p);
+    ofVec2f magnifySize = ofVec2f(160, 90);
+    ofVec2f movieTrans = ofVec2f(0, 0);
+    
 };
 #endif /* defined(__puchitics__sharedData__) */

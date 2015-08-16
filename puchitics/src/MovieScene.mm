@@ -6,7 +6,7 @@
 void MovieScene::setup(){
     cout << "load" << endl;
     font.loadFont("fonts/Arial.ttf", 30, true, true);
-    
+    eventFlag = false;
 }
 
 //--------------------------------------------------------------
@@ -22,13 +22,15 @@ void MovieScene::update(){
         movieName = "movies/" + getSharedData().movieName;
         stopPoint = getSharedData().stopPoint;
         bStopPoint = getSharedData().bStopPoint;
-        touchPoint = getSharedData().touchPoint;
         btnNo = getSharedData().trgBtnNo;
         
         getSharedData().loadedVideo.loadMovie(movieName);
         player = &getSharedData().loadedVideo;
         player->play();
         loadMovie = false;
+        
+        scale = getSharedData().magnifySize;
+        translate = getSharedData().movieTrans;
 
         cout << "play!" << endl;
         
@@ -73,7 +75,6 @@ void MovieScene::update(){
         getSharedData().loadedVideo.close();
         changeState("home");
     }
-
     
 }
 
@@ -83,18 +84,25 @@ void MovieScene::draw(){
     
     if (loadMovie) {
         ofSetColor(255);
-        player->getTexture()->draw(0, 0, ofGetWidth(), ofGetHeight());
+        ofPushMatrix();
+        ofTranslate(-1*scale.x/2, -1*scale.y/2);
+        ofTranslate(translate);
+        player->getTexture()->draw(0, 0, ofGetWidth()+scale.x, ofGetHeight()+scale.y);
+        ofSetColor(231, 255, 67);
+        
+        ofPopMatrix();
+
     }
     
     
     
     if (play && eventFlag) {
-        ofSetColor(231, 255, 67);
+        getSharedData().button[btnNo].draw();
         
         ofPushMatrix();
         ofTranslate(getSharedData().button[btnNo].pos);
-        font.drawString("touch!", -50, -60);
-        ofEllipse(0, 0, 100, 100);
+        ofSetColor(231, 255, 67);
+        font.drawString("touch!", -50, -70);
         ofPopMatrix();
     }
 
@@ -127,19 +135,6 @@ void MovieScene::touchUp(ofTouchEventArgs &touch){
         
     }
 }
-//
-//void MovieScene::callback(int &val){
-//    //    changeState("home");
-////    bHoverButton = true;
-//    cout << "touch down movie scene" << endl;
-//    
-//}
-//
-//void MovieScene::touchUpEventCallback(int &val){
-////    bHoverButton = false;
-//    cout << "touch up movie scene" << endl;
-//    
-//}
 
 
 string MovieScene::getName(){

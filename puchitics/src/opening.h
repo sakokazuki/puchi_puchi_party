@@ -26,6 +26,8 @@ public:
     
     void callback(int &val);
     void touchUpEventCallback(int &val);
+    ofVec2f startPoint;
+    int opBtnNo;
     
 };
 
