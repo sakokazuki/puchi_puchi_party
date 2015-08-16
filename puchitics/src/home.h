@@ -6,6 +6,7 @@
 #include "sharedData.h"
 
 #include "Button.h"
+#include "ofxTween.h"
 
 class home: public itg::ofxState<sharedData>{
     
@@ -30,6 +31,9 @@ class home: public itg::ofxState<sharedData>{
     int targetBtnNo;
     
     ofImage img;
+    
+    vector <ofxTween> twn;
+    ofxEasingCirc 	easing_circ;
     
     
 };

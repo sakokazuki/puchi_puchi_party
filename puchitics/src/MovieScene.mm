@@ -19,12 +19,10 @@ void MovieScene::update(){
         
         getSharedData().startMovie = false;
         
-        movieName = "movies/" + getSharedData().movieName;
         stopPoint = getSharedData().stopPoint;
         bStopPoint = getSharedData().bStopPoint;
         btnNo = getSharedData().trgBtnNo;
         
-        getSharedData().loadedVideo.loadMovie(movieName);
         player = &getSharedData().loadedVideo;
         player->play();
         loadMovie = false;
@@ -73,7 +71,9 @@ void MovieScene::update(){
         player->play();
         getSharedData().button[btnNo].bTouched = true;
         getSharedData().loadedVideo.close();
+        getSharedData().startHome = true;
         changeState("home");
+        
     }
     
 }

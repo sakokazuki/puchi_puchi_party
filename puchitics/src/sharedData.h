@@ -13,6 +13,7 @@ public:
     
     int sharedInt;
     bool startMovie = false;
+    bool startHome = false;
     
     string movieName = "purin.mp4";
     int stopPoint = 0;

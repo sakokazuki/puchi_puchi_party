@@ -17,6 +17,18 @@ void home::setup(){
 
 //--------------------------------------------------------------
 void home::update(){
+    if (getSharedData().startHome) {
+        
+        cout << "start home" << endl;
+        getSharedData().startHome = false;
+        for (int i=0; i<getSharedData().button.size(); i++) {
+            ofxTween tmpTwn;
+            twn.push_back(tmpTwn);
+            int randomDelay = (int)ofRandom(0, 500);
+            twn[i].setParameters(0, easing_circ, ofxTween::easeOut, 0, 118, 500, randomDelay);
+        }
+    }
+    
     if (getSharedData().bPuchi) {
         if (getSharedData().bHoverButton) {
             changeState("MovieScene");

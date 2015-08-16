@@ -22,6 +22,7 @@ void opening::update(){
     if (getSharedData().bPuchi) {
         if (getSharedData().bHoverButton) {
             changeState("home");
+            getSharedData().startHome = true;
             getSharedData().button[opBtnNo].bTouched = true;
             getSharedData().bHoverButton = false;
         }

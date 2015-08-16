@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>A603619E-FBCC-49C1-8EF5-574D4161E08B</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>puchitics</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>
 		<string>github.com:sakokazuki/puchi_puchi_party.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>puchitics/puchitics.xcodeproj/project.xcworkspace</string>
+	<string>puchitics/puchitics.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>

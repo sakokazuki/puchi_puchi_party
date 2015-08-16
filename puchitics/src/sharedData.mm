@@ -82,7 +82,7 @@ void sharedData::touchDownEventCbHome(int &val){
     }
     bHoverButton = true;
     targetBtnNo = val;
-
+    loadedVideo.loadMovie("movies/"+movieName);
 }
 
 void sharedData::touchUpEventCbHome(int &val){
@@ -116,9 +116,21 @@ void sharedData::movieChoose(ofVec2f p){
 
 void sharedData::randomMovieChoose(){
     bStopPoint = false;
+    int rand = (int)ofRandom(2);
+    switch (rand) {
+        case 0:
+            movieName = "purin.mp4";
+            break;
+        case 1:
+            movieName = "baseball.mp4";
+            break;
+        default:
+            movieName = "purin.mp4";
+            break;
+    }
     
     movieTrans = ofVec2f(0, 0);
-    movieName = "purin.mp4";
+    
 }
 
 

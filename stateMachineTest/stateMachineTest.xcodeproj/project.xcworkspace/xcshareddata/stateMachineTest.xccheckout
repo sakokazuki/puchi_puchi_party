@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5431C3098324239824B3A313883F8CE1A84C3E6A</key>
-		<string>../../../../../addons/ofxStateMachine</string>
+		<string>../../../../addons/ofxStateMachine</string>
 		<key>5D18099EB38C7436992AEA3482F7598304A91DAC</key>
 		<string>../../..</string>
 	</dict>
