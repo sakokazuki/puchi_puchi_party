@@ -21,13 +21,19 @@ void home::update(){
         
         cout << "start home" << endl;
         getSharedData().startHome = false;
+        twn.clear();
         for (int i=0; i<getSharedData().button.size(); i++) {
             ofxTween tmpTwn;
             twn.push_back(tmpTwn);
-            int randomDelay = (int)ofRandom(0, 500);
+            int randomDelay = (int)ofRandom(100, 300);
             twn[i].setParameters(0, easing_circ, ofxTween::easeOut, 0, 118, 500, randomDelay);
         }
     }
+    
+    for (int i=0; i<twn.size(); i++) {
+        twn[i].update();
+    }
+    
     
     if (getSharedData().bPuchi) {
         if (getSharedData().bHoverButton) {
@@ -47,8 +53,14 @@ void home::update(){
 void home::draw(){
     
     ofBackground(60, 220, 250);
+
     for (int i=0; i<getSharedData().button.size(); i++) {
-        getSharedData().button[i].draw();
+        if (twn.size() != 0) {
+            getSharedData().button[i].width = twn[i].getTarget(0);
+            getSharedData().button[i].height = twn[i].getTarget(0);
+            getSharedData().button[i].draw();
+        }
+        
     }
     ofSetColor(255, 200);
 //    img.draw(0, 0);
