@@ -13,8 +13,12 @@ void opening::setup(){
             opBtnNo = i;
             len = tmp;
         }
-        cout << i << ": "<< (getSharedData().button[i].pos - startPoint) << " : " << tmp << endl;
     }
+    
+    opUnderTextFont.loadFont("fonts/ヒラギノ角ゴ Pro W6.otf", 30, true, true);
+    opUnderTextFont.setLetterSpacing(0.9);
+    opUnderText = "はじめる";
+    ofSetRectMode(OF_RECTMODE_CENTER);
 }
 
 //--------------------------------------------------------------
@@ -25,6 +29,7 @@ void opening::update(){
             getSharedData().startHome = true;
             getSharedData().button[opBtnNo].bTouched = true;
             getSharedData().bHoverButton = false;
+        
         }
         getSharedData().bPuchi = false;
     }
@@ -37,12 +42,20 @@ void opening::update(){
 void opening::draw(){
     
     ofBackground(60,220,250);
+    for (int i=0; i<getSharedData().button.size(); i++) {
+        ofSetColor(94, 227, 213);
+        if (i != opBtnNo) {
+            ofEllipse(getSharedData().button[i].pos, 118, 118);
+        }
+    }
     
-
+    ofSetColor(0, 90, 120);
+    ofRectRounded(ofGetWidth()/2, 9*ofGetHeight()/10, 250, 80, 40);
+    ofSetColor(231, 255, 67);
+    float w = opUnderTextFont.stringWidth(opUnderText);
+    opUnderTextFont.drawString(opUnderText, ofGetWidth()/2-w/2, 9*ofGetHeight()/10+14);
     
     getSharedData().button[opBtnNo].draw();
-    
-
     
 }
 

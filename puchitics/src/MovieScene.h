@@ -24,17 +24,10 @@ class MovieScene: public itg::ofxState<sharedData>{
     ofTrueTypeFont font;
     ofxiOSVideoPlayer video;
     ofxiOSVideoPlayer *player;
-    bool play;
-    bool eventFlag;
     bool loadMovie;
     
-    string movieName;
-    int stopPoint;
-    bool bStopPoint;
     int btnNo;
     
-    void callback(int &val);
-    void touchUpEventCallback(int &val);
     bool bHoverButton;
     
     ofVec2f scale;

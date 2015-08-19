@@ -17,6 +17,8 @@
 		3D60CC731B75A79F00081873 /* sharedData.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC711B75A79F00081873 /* sharedData.mm */; };
 		3D60CC881B760D6000081873 /* Button.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CC861B760D6000081873 /* Button.mm */; };
 		3D60CCF01B78F9F000081873 /* MovieScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3D60CCEE1B78F9F000081873 /* MovieScene.mm */; };
+		3D80EB691B8493C700FC4073 /* ofxJSONElement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D80EB5F1B8493C700FC4073 /* ofxJSONElement.cpp */; };
+		3D80EB6A1B8493C700FC4073 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D80EB681B8493C700FC4073 /* jsoncpp.cpp */; };
 		3D864F931B81013600E8C6D1 /* ofxEasing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F791B81013600E8C6D1 /* ofxEasing.cpp */; };
 		3D864F941B81013600E8C6D1 /* ofxEasingBack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F7B1B81013600E8C6D1 /* ofxEasingBack.cpp */; };
 		3D864F951B81013600E8C6D1 /* ofxEasingBounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F7D1B81013600E8C6D1 /* ofxEasingBounce.cpp */; };
@@ -30,6 +32,7 @@
 		3D864F9D1B81013600E8C6D1 /* ofxEasingQuint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F8D1B81013600E8C6D1 /* ofxEasingQuint.cpp */; };
 		3D864F9E1B81013600E8C6D1 /* ofxEasingSine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F8F1B81013600E8C6D1 /* ofxEasingSine.cpp */; };
 		3D864F9F1B81013600E8C6D1 /* ofxTween.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D864F911B81013600E8C6D1 /* ofxTween.cpp */; };
+		3DF55AFD1B81D6F100B61F1D /* ofxTrueTypeFontUC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3DF55AFB1B81D6F100B61F1D /* ofxTrueTypeFontUC.cpp */; };
 		5326AEA810A23A0500278DE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5326AEA710A23A0500278DE6 /* CoreLocation.framework */; };
 		53F323EB10A20EDB00E0DAE4 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */; };
 		678E130817951530005B6D19 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 678E130717951530005B6D19 /* Icon@2x.png */; };
@@ -87,6 +90,12 @@
 		3D60CC871B760D6000081873 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		3D60CCEE1B78F9F000081873 /* MovieScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MovieScene.mm; sourceTree = "<group>"; };
 		3D60CCEF1B78F9F000081873 /* MovieScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieScene.h; sourceTree = "<group>"; };
+		3D80EB5E1B8493C700FC4073 /* ofxJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxJSON.h; sourceTree = "<group>"; };
+		3D80EB5F1B8493C700FC4073 /* ofxJSONElement.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxJSONElement.cpp; sourceTree = "<group>"; };
+		3D80EB601B8493C700FC4073 /* ofxJSONElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxJSONElement.h; sourceTree = "<group>"; };
+		3D80EB651B8493C700FC4073 /* json-forwards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "json-forwards.h"; sourceTree = "<group>"; };
+		3D80EB661B8493C700FC4073 /* json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		3D80EB681B8493C700FC4073 /* jsoncpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = jsoncpp.cpp; sourceTree = "<group>"; };
 		3D864F781B81013600E8C6D1 /* easing_terms_of_use.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = easing_terms_of_use.html; sourceTree = "<group>"; };
 		3D864F791B81013600E8C6D1 /* ofxEasing.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxEasing.cpp; sourceTree = "<group>"; };
 		3D864F7A1B81013600E8C6D1 /* ofxEasing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasing.h; sourceTree = "<group>"; };
@@ -114,6 +123,8 @@
 		3D864F901B81013600E8C6D1 /* ofxEasingSine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxEasingSine.h; sourceTree = "<group>"; };
 		3D864F911B81013600E8C6D1 /* ofxTween.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTween.cpp; sourceTree = "<group>"; };
 		3D864F921B81013600E8C6D1 /* ofxTween.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTween.h; sourceTree = "<group>"; };
+		3DF55AFB1B81D6F100B61F1D /* ofxTrueTypeFontUC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTrueTypeFontUC.cpp; sourceTree = "<group>"; };
+		3DF55AFC1B81D6F100B61F1D /* ofxTrueTypeFontUC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTrueTypeFontUC.h; sourceTree = "<group>"; };
 		5326AEA710A23A0500278DE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53F323EA10A20EDB00E0DAE4 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		678E130717951530005B6D19 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "bin/data/Icon@2x.png"; sourceTree = "<group>"; };
@@ -236,6 +247,69 @@
 			name = util;
 			sourceTree = "<group>";
 		};
+		3D80EB5C1B8493C700FC4073 /* ofxJSON */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB5D1B8493C700FC4073 /* src */,
+				3D80EB611B8493C700FC4073 /* libs */,
+			);
+			name = ofxJSON;
+			sourceTree = "<group>";
+		};
+		3D80EB5D1B8493C700FC4073 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB5E1B8493C700FC4073 /* ofxJSON.h */,
+				3D80EB5F1B8493C700FC4073 /* ofxJSONElement.cpp */,
+				3D80EB601B8493C700FC4073 /* ofxJSONElement.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxJSON/src;
+			sourceTree = "<group>";
+		};
+		3D80EB611B8493C700FC4073 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB621B8493C700FC4073 /* jsoncpp */,
+			);
+			name = libs;
+			path = ../../../addons/ofxJSON/libs;
+			sourceTree = "<group>";
+		};
+		3D80EB621B8493C700FC4073 /* jsoncpp */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB631B8493C700FC4073 /* include */,
+				3D80EB671B8493C700FC4073 /* src */,
+			);
+			path = jsoncpp;
+			sourceTree = "<group>";
+		};
+		3D80EB631B8493C700FC4073 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB641B8493C700FC4073 /* json */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		3D80EB641B8493C700FC4073 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB651B8493C700FC4073 /* json-forwards.h */,
+				3D80EB661B8493C700FC4073 /* json.h */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		3D80EB671B8493C700FC4073 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3D80EB681B8493C700FC4073 /* jsoncpp.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		3D864F751B81013600E8C6D1 /* ofxTween */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +361,24 @@
 			path = Easings;
 			sourceTree = "<group>";
 		};
+		3DF55AF91B81D6F100B61F1D /* ofxTrueTypeFontUC */ = {
+			isa = PBXGroup;
+			children = (
+				3DF55AFA1B81D6F100B61F1D /* src */,
+			);
+			name = ofxTrueTypeFontUC;
+			sourceTree = "<group>";
+		};
+		3DF55AFA1B81D6F100B61F1D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3DF55AFB1B81D6F100B61F1D /* ofxTrueTypeFontUC.cpp */,
+				3DF55AFC1B81D6F100B61F1D /* ofxTrueTypeFontUC.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxTrueTypeFontUC/src;
+			sourceTree = "<group>";
+		};
 		4851D11FF22DECA849CB0054 /* ofxStateMachine */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +409,8 @@
 			children = (
 				4851D11FF22DECA849CB0054 /* ofxStateMachine */,
 				3D864F751B81013600E8C6D1 /* ofxTween */,
+				3DF55AF91B81D6F100B61F1D /* ofxTrueTypeFontUC */,
+				3D80EB5C1B8493C700FC4073 /* ofxJSON */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -462,10 +556,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF55AFD1B81D6F100B61F1D /* ofxTrueTypeFontUC.cpp in Sources */,
 				3D864F9A1B81013600E8C6D1 /* ofxEasingLinear.cpp in Sources */,
 				3D864F9B1B81013600E8C6D1 /* ofxEasingQuad.cpp in Sources */,
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				3D864F9F1B81013600E8C6D1 /* ofxTween.cpp in Sources */,
+				3D80EB6A1B8493C700FC4073 /* jsoncpp.cpp in Sources */,
 				3D864F981B81013600E8C6D1 /* ofxEasingElastic.cpp in Sources */,
 				3D864F9D1B81013600E8C6D1 /* ofxEasingQuint.cpp in Sources */,
 				3D864F991B81013600E8C6D1 /* ofxEasingExpo.cpp in Sources */,
@@ -481,6 +577,7 @@
 				3D60CC731B75A79F00081873 /* sharedData.mm in Sources */,
 				3D60CCF01B78F9F000081873 /* MovieScene.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* ofApp.mm in Sources */,
+				3D80EB691B8493C700FC4073 /* ofxJSONElement.cpp in Sources */,
 				3D60CC881B760D6000081873 /* Button.mm in Sources */,
 				3D4A80801B7B9C7200894C9C /* SoundDebug.mm in Sources */,
 				3D864F941B81013600E8C6D1 /* ofxEasingBack.cpp in Sources */,
@@ -511,7 +608,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SWIFT_OBJC_BRIDGING_HEADER = "src/puchitics-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxJSON/libs/jsoncpp/include/;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
@@ -527,7 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SWIFT_OBJC_BRIDGING_HEADER = "src/puchitics-Bridging-Header.h";
-				USER_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = ../../../addons/ofxJSON/libs/jsoncpp/include/;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;

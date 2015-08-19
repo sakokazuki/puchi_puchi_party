@@ -8,9 +8,20 @@ void home::setup(){
     row = 10;
     bHoverButton = false;
     img.loadImage("select.png");
-    ofSetRectMode(OF_RECTMODE_CORNER);
-
     
+    homeUnderTextFont.loadFont("fonts/ヒラギノ角ゴ Pro W6.otf", 30, true, true);
+    homeUnderTextFont.setLetterSpacing(0.9);
+    homeUnderText = "好きなところをプチプチしてね！";
+    underTextAlpha = 0;
+    bFirstLabel = false;
+    bComplete = false;
+    completeText[0] = "ぷちぷちが全部つぶれた！";
+    completeText[1] = "ぷちぷちマスター";
+    
+    
+    ofAddListener(uTTween.end_E, this, &home::uTTweenCb);
+
+
   
     
 }
@@ -19,7 +30,6 @@ void home::setup(){
 void home::update(){
     if (getSharedData().startHome) {
         
-        cout << "start home" << endl;
         getSharedData().startHome = false;
         twn.clear();
         for (int i=0; i<getSharedData().button.size(); i++) {
@@ -28,11 +38,26 @@ void home::update(){
             int randomDelay = (int)ofRandom(100, 300);
             twn[i].setParameters(0, easing_circ, ofxTween::easeOut, 0, 118, 500, randomDelay);
         }
+        ofSetRectMode(OF_RECTMODE_CENTER);
+        uTTween.setParameters(0, easing_circ, ofxTween::easeOut, 0, 255, 500, 600);
+        
+        bool bCompTmp = true;
+        for (int i=0; i<getSharedData().button.size(); i++) {
+            if (!getSharedData().button[i].bTouched) {
+                bCompTmp = false;
+            }
+        }
+        bComplete = bCompTmp;
+        
+        
     }
     
     for (int i=0; i<twn.size(); i++) {
         twn[i].update();
     }
+    uTTween.update();
+//    underTextAlpha = uTTween.update();
+    
     
     
     if (getSharedData().bPuchi) {
@@ -43,9 +68,15 @@ void home::update(){
             int trgNo = getSharedData().targetBtnNo;
             getSharedData().button[trgNo].touchUpEvent(1);
             getSharedData().button[trgNo].bTouched = true;
+            
+            if (!bFirstLabel) {
+                bFirstLabel = true;
+            }
         }
         getSharedData().bPuchi = false;
     }
+    
+    
     
 }
 
@@ -53,15 +84,37 @@ void home::update(){
 void home::draw(){
     
     ofBackground(60, 220, 250);
-
-    for (int i=0; i<getSharedData().button.size(); i++) {
-        if (twn.size() != 0) {
+    if (twn.size() != 0 && !getSharedData().startHome) {
+        for (int i=0; i<getSharedData().button.size(); i++) {
             getSharedData().button[i].width = twn[i].getTarget(0);
             getSharedData().button[i].height = twn[i].getTarget(0);
             getSharedData().button[i].draw();
+            
         }
         
+        underTextAlpha = uTTween.getTarget(0);
+        
+        if (bComplete) {
+            ofSetColor(0, 90, 120, underTextAlpha);
+            ofRectRounded(ofGetWidth()/2, ofGetHeight()/2, 500, 150, 75);
+            ofSetColor(231, 255, 67, underTextAlpha);
+            float w = homeUnderTextFont.stringWidth(completeText[0]);
+            homeUnderTextFont.drawString(completeText[0], ofGetWidth()/2-w/2, ofGetHeight()/2-10);
+            w = homeUnderTextFont.stringWidth(completeText[1]);
+            homeUnderTextFont.drawString(completeText[1], ofGetWidth()/2-w/2, ofGetHeight()/2+40);
+        }else{
+            if (!bFirstLabel) {
+                ofSetColor(0, 90, 120, underTextAlpha);
+                ofRectRounded(ofGetWidth()/2, 9*ofGetHeight()/10, 600, 80, 40);
+                ofSetColor(231, 255, 67, underTextAlpha);
+                float w = homeUnderTextFont.stringWidth(homeUnderText);
+                homeUnderTextFont.drawString(homeUnderText, ofGetWidth()/2-w/2, 9*ofGetHeight()/10+14);
+            }
+            
+        }
     }
+    
+    
     ofSetColor(255, 200);
 //    img.draw(0, 0);
     
@@ -91,36 +144,19 @@ void home::touchUp(ofTouchEventArgs &touch){
     }
     
 }
-//
-//void home::callback(int &val){
-//    cout << "homeCallback" << endl;
-//    getSharedData().startMovie = true;
-//    if (val == 1) {
-//        getSharedData().movieName = "egg.mov";
-//        getSharedData().stopPoint = 93;
-//        getSharedData().bStopPoint = true;
-//        getSharedData().touchPoint = ofVec2f(610, 200);
-//        getSharedData().trgBtnNo = 16;
-//    }else if(val == 6){
-//        getSharedData().movieName = "tomato.mp4";
-//        getSharedData().stopPoint = 35;
-//        getSharedData().bStopPoint = true;
-//        getSharedData().touchPoint = ofVec2f(560, 180);
-//    }else{
-//        getSharedData().movieName = "purin.mp4";
-//        getSharedData().bStopPoint = false;
-//    }
-//    bHoverButton = true;
-//    targetBtnNo = val;
-//     
-////    changeState("MovieScene");
-//}
-//
-//void home::touchUpEventCallback(int &val){
-//    bHoverButton = false;
-//}
 
-
+void home::uTTweenCb(int &e){
+    if (!bComplete) {
+        switch (e) {
+            case 0:
+                uTTween.setParameters(1, easing_circ, ofxTween::easeOut, 255, 0, 500, 2000);
+                break;
+            default:
+                break;
+        }
+    }
+    
+}
 
 string home::getName(){
     return "home";

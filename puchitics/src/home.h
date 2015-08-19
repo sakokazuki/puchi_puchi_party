@@ -7,6 +7,7 @@
 
 #include "Button.h"
 #include "ofxTween.h"
+#include "ofxTrueTypeFontUC.h"
 
 class home: public itg::ofxState<sharedData>{
     
@@ -35,6 +36,15 @@ class home: public itg::ofxState<sharedData>{
     vector <ofxTween> twn;
     ofxEasingCirc 	easing_circ;
     
+    int underTextAlpha;
+    ofxTrueTypeFontUC homeUnderTextFont;
+    string homeUnderText;
+    ofxTween uTTween;
+    void uTTweenCb(int &e);
+    
+    bool bFirstLabel;
+    bool bComplete;
+    string completeText[2];
     
 };
 

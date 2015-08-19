@@ -6,7 +6,7 @@ Button::Button(){
     bTouched = false;
     hoverWidth = 8;
     
-    for (int i=0; i<3; i++) {
+    for (int i=0; i<2; i++) {
         ofEvent<int> tmp;
         upEvents.push_back(tmp);
         downEvents.push_back(tmp);
@@ -49,7 +49,6 @@ void Button::touchDownEvent(int scene){
             
         }
     }
-    
     bHover = true;
 
 }
@@ -64,7 +63,6 @@ void Button::touchUpEvent(int scene){
             
         }
     }
-    
     bHover = false;
 }
 

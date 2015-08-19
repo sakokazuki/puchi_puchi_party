@@ -7,6 +7,7 @@
 #include "sharedData.h"
 
 #include "Button.h"
+#include "ofxTrueTypeFontUC.h"
 
 
 class opening: public itg::ofxState<sharedData>{
@@ -28,6 +29,9 @@ public:
     void touchUpEventCallback(int &val);
     ofVec2f startPoint;
     int opBtnNo;
+    
+    ofxTrueTypeFontUC opUnderTextFont;
+    string opUnderText;
     
 };
 
