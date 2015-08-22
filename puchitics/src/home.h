@@ -16,6 +16,7 @@ class home: public itg::ofxState<sharedData>{
     void draw();
     void touchDown(ofTouchEventArgs & touch);
     void touchUp(ofTouchEventArgs & touch);
+    void touchDoubleTap(ofTouchEventArgs & touch);
     string getName();
     
     int btnSize;
@@ -27,9 +28,11 @@ class home: public itg::ofxState<sharedData>{
 
     void callback(int &val);
     void touchUpEventCallback(int &val);
+
     
     bool bHoverButton;
     int targetBtnNo;
+    int puchiWaitCount;
     
     ofImage img;
     
@@ -45,6 +48,17 @@ class home: public itg::ofxState<sharedData>{
     bool bFirstLabel;
     bool bComplete;
     string completeText[2];
+    
+    void changeStateToMovie();
+    
+    ofImage creditImg;
+    ofxTween creditTween;
+    void creditTweenCb(int &e);
+    bool bDisplayCredit;
+    
+    ofImage fbImg;
+    ofImage twImg;
+
     
 };
 

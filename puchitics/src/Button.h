@@ -33,7 +33,6 @@ public:
     void touchUpEvent(int scene);
     bool bHover;
     int hoverWidth;
-    
 };
 
 

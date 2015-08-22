@@ -43,8 +43,11 @@ public:
     ofVec2f magnifySize = ofVec2f(160, 90);
     ofVec2f movieTrans = ofVec2f(0, 0);
     
-    
     ofxJSONElement json;
+    bool bCredit = false;
+    bool bFb = false;
+    bool bTw = false;
+
     
     
 };

@@ -34,7 +34,7 @@ void Button::draw(){
     }
     ofEllipse(pos, width, height);
     ofSetColor(0);
-    ofDrawBitmapString(ofToString(no), pos.x, pos.y+20);
+//    ofDrawBitmapString(ofToString(no), pos.x, pos.y+20);
     
 }
 

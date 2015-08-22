@@ -36,17 +36,18 @@ class ofApp : public ofxiOSApp {
     ofSoundStream soundStream;
     
     float *_buffer;
+    float *_buffer2;
     float tmpBuffer[BUFFER_SIZE];
     float saveBuffer[BUFFER_SIZE];
-    
-    float highpass[BUFFER_SIZE];
-    float  magnitude[BUFFER_SIZE];
-    float  phase[BUFFER_SIZE];
-    float  power[BUFFER_SIZE];
     
     bool volumeFlag;
     bool variationFlag;
     
+    bool flag1;
+    bool flag2;
+    bool flag3;
+    
+    bool bg;
     
 };
 

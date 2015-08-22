@@ -3,11 +3,11 @@
 
 void sharedData::btnSetup(){
     btnSize = 118;
-    btnSpaceX = 23;
-    btnSpaceY = 5;
-    btnBeginPoint = ofVec2f(75, 75);
-    colmn = 5;
-    row = 10;
+    btnSpaceX = 30;
+    btnSpaceY = 12;
+    btnBeginPoint = ofVec2f(55, 62);
+    colmn = 8;
+    row = 15;
     for (int i=0; i<row; i++) {
         for (int j=0; j<colmn; j++) {
             ofVec2f tmp = ofVec2f(i*(btnSize+btnSpaceX)+btnBeginPoint.x, j*(btnSize+btnSpaceY)+btnBeginPoint.y);
@@ -22,16 +22,21 @@ void sharedData::btnSetup(){
         Button btn;
         button.push_back(btn);
         ofVec2f p = btnPos[i];
+        
         int w = btnSize;
         int h = btnSize;
         button[i].setup(p, w, h, i);
+        
+        int space = 20;
+        if ((p.x < w/2-space || p.y < h/2-space) || (p.x > ofGetHeight()-w/2+space || p.y > ofGetWidth()-h/2+space)) {
+            button[i].bTouched = true;
+        }
     }
     for (int i=0; i<button.size(); i++) {
         ofAddListener(button[i].downEvents[0], this, &sharedData::touchDownEventCbOp);
         ofAddListener(button[i].upEvents[0], this, &sharedData::touchUpEventCbOp);
         ofAddListener(button[i].downEvents[1], this, &sharedData::touchDownEventCbHome);
         ofAddListener(button[i].upEvents[1], this, &sharedData::touchUpEventCbHome);
-
 
     }
     
@@ -80,12 +85,25 @@ void sharedData::touchDownEventCbHome(int &val){
     }
     cout << "nearMovieName: " << movieName << endl;
     cout << "trans        : " << movieTrans << endl;
+    cout << "val          : " << val << endl;
+    
+    if (movieName == "credit") {
+        bCredit = true;
+    }else if(movieName == "twitter"){
+        bTw = true;
+    }else if(movieName == "facebook"){
+        bFb = true;
+    }
     
     trgBtnNo = val;
-    startMovie = true;
-    bHoverButton = true;
     targetBtnNo = val;
-    loadedVideo.loadMovie("movies/"+movieName+".mp4");
+    bHoverButton = true;
+    
+    if (!bCredit) {
+        loadedVideo.loadMovie("movies/"+movieName+".mp4");
+        cout << "touchdownevent------=+++++++++++++++++++++++" << endl;
+    }
+    
 }
 
 void sharedData::touchUpEventCbHome(int &val){

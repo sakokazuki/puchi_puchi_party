@@ -8,6 +8,7 @@
 
 #include "Button.h"
 #include "ofxTrueTypeFontUC.h"
+#include "ofxTween.h"
 
 
 class opening: public itg::ofxState<sharedData>{
@@ -17,6 +18,7 @@ class opening: public itg::ofxState<sharedData>{
     void draw();
     void touchDown(ofTouchEventArgs & touch);
     void touchUp(ofTouchEventArgs & touch);
+    void touchDoubleTap(ofTouchEventArgs & touch);
     string getName();
     
 
@@ -32,6 +34,20 @@ public:
     
     ofxTrueTypeFontUC opUnderTextFont;
     string opUnderText;
+    bool bEndOpening;
+    int endCircle;
+    
+    void changeStateFunc();
+    
+    ofxEasingCirc 	easing_circ;
+    ofxTween endCircleTween;
+    ofxTween circleCol[3];
+    void circleEndCb(int &e);
+    
+    ofImage logoImg;
+    ofImage testImg;
+    
+
     
 };
 
