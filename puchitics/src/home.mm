@@ -199,6 +199,7 @@ void home::creditTweenCb(int &e){
 
 void home::changeStateToMovie(){
     int trgNo = getSharedData().targetBtnNo;
+    getSharedData().sePlay();
     cout << "trgNo" << trgNo << endl;
     getSharedData().button[trgNo].bTouched = true;
     if (getSharedData().bCredit && creditCount == 0) {

@@ -47,6 +47,11 @@ public:
     bool bCredit = false;
     bool bFb = false;
     bool bTw = false;
+    
+    ofSoundPlayer sePlayer;
+    void sePlay();
+    
+    vector<string> movieList;
 
     
     

@@ -40,8 +40,17 @@ void sharedData::btnSetup(){
 
     }
     
+    sePlayer.loadSound("sounds/cursor7.mp3");
+    sePlayer.setLoop(false);
     json.open("data.json");
-
+    
+    ofDirectory dir("movies/");
+    dir.allowExt("mp4");
+    dir.listDir();
+    
+    for(int i = 0; i < dir.numFiles(); i++){
+        movieList.push_back(dir.getName(i));
+    }
     
 }
 
@@ -71,7 +80,7 @@ void sharedData::touchDownEventCbHome(int &val){
         float tmpLength = (buttonPos-tmpPos).length();
         if (tmpLength < minLength) {
             minLength = tmpLength;
-            movieName = tmpName;
+            movieName = tmpName+".mp4";
             moviePos = tmpPos;
         }
         
@@ -81,7 +90,8 @@ void sharedData::touchDownEventCbHome(int &val){
         movieTrans = buttonPos - moviePos;
     }else{
         movieTrans = ofVec2f(0, 0);
-        movieName = "egg";
+        int randomNo = ofRandom(0, movieList.size());
+        movieName = movieList[randomNo];
     }
     cout << "nearMovieName: " << movieName << endl;
     cout << "trans        : " << movieTrans << endl;
@@ -109,8 +119,8 @@ void sharedData::touchDownEventCbHome(int &val){
     targetBtnNo = val;
     bHoverButton = true;
     
-    if (!bCredit) {
-        loadedVideo.loadMovie("movies/"+movieName+".mp4");
+    if (!bCredit || !bTw || !bFb) {
+        loadedVideo.loadMovie("movies/"+movieName);
         cout << "touchdownevent------=+++++++++++++++++++++++" << endl;
     }
     
@@ -118,6 +128,11 @@ void sharedData::touchDownEventCbHome(int &val){
 
 void sharedData::touchUpEventCbHome(int &val){
     bHoverButton = false;
+}
+
+void sharedData::sePlay(){
+    sePlayer.play();
+    cout << "soundplay" << endl;
 }
 
 

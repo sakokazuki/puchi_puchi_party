@@ -113,6 +113,7 @@ void opening::touchDoubleTap(ofTouchEventArgs &touch){
 
 void opening::changeStateFunc(){
     bEndOpening = true;
+    getSharedData().sePlay();
     endCircleTween.setParameters(0, easing_circ, ofxTween::easeOut, 118, 1500, 800, 0);
     int beforeColor[3] =  {231, 255, 67};
     int afterColor[3] =  {60, 220, 250};
