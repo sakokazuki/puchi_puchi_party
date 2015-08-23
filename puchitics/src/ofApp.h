@@ -34,6 +34,7 @@ class ofApp : public ofxiOSApp {
     
     void audioIn(float *input, int bufferSize, int nChannels);
     ofSoundStream soundStream;
+    ofSoundPlayer bgmPlayer;
     
     float *_buffer;
     float *_buffer2;
@@ -48,6 +49,8 @@ class ofApp : public ofxiOSApp {
     bool flag3;
     
     bool bg;
+    
+    
     
 };
 

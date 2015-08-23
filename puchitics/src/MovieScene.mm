@@ -94,6 +94,13 @@ void MovieScene::update(){
 //--------------------------------------------------------------
 void MovieScene::draw(){
     ofBackground(60, 220, 250);
+    for (int i=0; i<getSharedData().button.size(); i++) {
+        ofSetColor(231, 255, 67);
+        if (getSharedData().button[i].bTouched) {
+            ofSetColor(0, 160, 200);
+        }
+        ofEllipse(getSharedData().button[i].pos, getSharedData().button[i].width, getSharedData().button[i].height);
+    }
     if (bThroughSetup) {
 //        cout << "movie draw()3  " << getSharedData().startMovie << endl;
         if (loadMovie) {
@@ -154,7 +161,7 @@ void MovieScene::touchUp(ofTouchEventArgs &touch){
 
 void MovieScene::endMovieSceneCb(int &val){
     player->setFrame(0);
-    player->play();
+    player->stop();
     getSharedData().loadedVideo.close();
     getSharedData().startHome = true;
     changeState("home");

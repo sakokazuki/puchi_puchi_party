@@ -42,6 +42,8 @@ class MovieScene: public itg::ofxState<sharedData>{
     
     ofImage soundImg;
     bool displaySoundImg;
+    
+    
 
 };
 

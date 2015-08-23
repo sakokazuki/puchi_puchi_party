@@ -59,6 +59,7 @@ class home: public itg::ofxState<sharedData>{
     ofImage fbImg;
     ofImage twImg;
 
+    int creditCount;
     
 };
 

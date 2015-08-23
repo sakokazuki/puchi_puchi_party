@@ -21,6 +21,10 @@ void ofApp::setup(){
     
     _buffer = new float[BUFFER_SIZE];
     _buffer2 = new float[BUFFER_SIZE];
+    
+    bgmPlayer.loadSound("sounds/puchi_bgm.mp3");
+    bgmPlayer.setLoop(true);
+    bgmPlayer.play();
 }
 
 //--------------------------------------------------------------

@@ -20,6 +20,8 @@ void home::setup(){
     ofAddListener(creditTween.end_E, this, &home::creditTweenCb);
     
     puchiWaitCount = 0;
+    
+    creditCount = 0;
 }
 
 //--------------------------------------------------------------
@@ -57,7 +59,7 @@ void home::update(){
     
     if (getSharedData().bPuchi) {
         puchiWaitCount++;
-        if (getSharedData().bHoverButton) {
+        if (getSharedData().bHoverButton && bDisplayCredit == false) {
             cout << "before change state--------------------" <<endl;
             changeStateToMovie();
         }
@@ -186,6 +188,7 @@ void home::creditTweenCb(int &e){
             break;
         case 1:
             bDisplayCredit = false;
+            getSharedData().bCredit = false;
             cout << "endcredit" << endl;
             break;
         default:
@@ -198,16 +201,17 @@ void home::changeStateToMovie(){
     int trgNo = getSharedData().targetBtnNo;
     cout << "trgNo" << trgNo << endl;
     getSharedData().button[trgNo].bTouched = true;
-    if (getSharedData().bCredit) {
+    if (getSharedData().bCredit && creditCount == 0) {
         cout << "credit" << endl;
-        getSharedData().bCredit = false;
         creditTween.setParameters(0, easing_circ, ofxTween::easeOut, 0, 255, 500, 0);
+        creditCount++;
         bDisplayCredit = true;
     }else if (getSharedData().bTw){
        ofLaunchBrowser("https://twitter.com/intent/tweet?hashtags=lucido&original_referer=http%3A%2F%2Fpuchitics.com%2Fver1%2F&ref_src=twsrc%5Etfw&text=40%E6%89%8D%E3%81%8B%E3%82%89%E3%81%AE%E3%83%99%E3%82%BF%E3%81%A4%E3%81%8F%E3%83%8B%E3%82%AA%E3%82%A4%E3%81%AB%E3%80%82%E5%85%88%E7%9D%8010%E4%B8%87%E6%9C%AC%E7%84%A1%E6%96%99%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%97%E3%83%AC%E3%82%BC%E3%83%B3%E3%83%88%E5%AE%9F%E6%96%BD%E4%B8%AD%EF%BC%81&tw_p=tweetbutton&url=http%3A%2F%2Fpuchitics.com%2Fver1%2F");
     }else if (getSharedData().bFb){
         ofLaunchBrowser("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fpuchitics.com%2Fver1%2F");
     }else{
+        cout << "change scene to movie" << endl;
         getSharedData().startMovie = true;
         changeState("MovieScene");
         getSharedData().bHoverButton = false;

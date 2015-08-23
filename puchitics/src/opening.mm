@@ -26,7 +26,7 @@ void opening::setup(){
     
     ofAddListener(endCircleTween.end_E, this, &opening::circleEndCb);
     
-    testImg.loadImage("images/testhome.png");
+    testImg.loadImage("images/test.png");
     
     
 }
@@ -78,8 +78,12 @@ void opening::draw(){
         ofEllipse(getSharedData().button[opBtnNo].pos, endCircleTween.getTarget(0), endCircleTween.getTarget(0));
     }
     
-    ofSetColor(255, 20);
-//    testImg.draw(ofGetWidth()/2, ofGetHeight()/2);
+    ofSetColor(255);
+    ofEnableBlendMode(OF_BLENDMODE_MULTIPLY);
+    
+//    testImg.draw(ofGetWidth()/2, ofGetHeight() /2);
+    
+    ofEnableBlendMode(OF_BLENDMODE_ALPHA);
     
 }
 

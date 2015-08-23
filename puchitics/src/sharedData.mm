@@ -89,11 +89,21 @@ void sharedData::touchDownEventCbHome(int &val){
     
     if (movieName == "credit") {
         bCredit = true;
-    }else if(movieName == "twitter"){
-        bTw = true;
-    }else if(movieName == "facebook"){
-        bFb = true;
+    }else{
+        bCredit = false;
     }
+    if(movieName == "twitter"){
+        bTw = true;
+    }else{
+        bTw = false;
+    }
+    if(movieName == "facebook"){
+        bFb = true;
+    }else{
+        bFb = false;
+    }
+    
+    cout << "bcredit " << bCredit << endl;
     
     trgBtnNo = val;
     targetBtnNo = val;
