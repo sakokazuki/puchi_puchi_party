@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "5D18099EB38C7436992AEA3482F7598304A91DAC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5D18099EB38C7436992AEA3482F7598304A91DAC" : 0,
+    "5431C3098324239824B3A313883F8CE1A84C3E6A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6F60702B-C413-4A50-AAF3-4537A4C32F68",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5D18099EB38C7436992AEA3482F7598304A91DAC" : "puchi_puchi_party",
+    "5431C3098324239824B3A313883F8CE1A84C3E6A" : "addons\/ofxStateMachine"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "stateMachineTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "stateMachineTest\/stateMachineTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/neilmendoza\/ofxStateMachine.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5431C3098324239824B3A313883F8CE1A84C3E6A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sakokazuki\/puchi_puchi_party.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D18099EB38C7436992AEA3482F7598304A91DAC"
+    }
+  ]
+}

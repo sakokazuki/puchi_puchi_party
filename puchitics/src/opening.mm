@@ -44,9 +44,9 @@ void opening::update(){
         for (int i=0; i<3; i++) {
              circleCol[i].update();
         }
-        endCircleTween.update();
+        
     }
-    
+    endCircleTween.update();
 
 }
 
@@ -120,6 +120,7 @@ void opening::changeStateFunc(){
     for (int i=0; i<3; i++) {
         circleCol[i].setParameters(0, easing_circ, ofxTween::easeOut, beforeColor[i], afterColor[i], 800, 0);
     }
+//    changeState("home");
 }
 
 void opening::circleEndCb(int &e){
