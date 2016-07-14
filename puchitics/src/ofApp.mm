@@ -24,7 +24,7 @@ void ofApp::setup(){
     
     bgmPlayer.loadSound("sounds/puchi_bgm.mp3");
     bgmPlayer.setLoop(true);
-    bgmPlayer.setVolume(0.5f);
+    bgmPlayer.setVolume(0.2f);
     bgmPlayer.play();
 }
 

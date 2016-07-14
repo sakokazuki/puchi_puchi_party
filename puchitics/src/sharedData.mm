@@ -97,17 +97,17 @@ void sharedData::touchDownEventCbHome(int &val){
     cout << "trans        : " << movieTrans << endl;
     cout << "val          : " << val << endl;
     
-    if (movieName == "credit") {
+    if (movieName == "credit.mp4") {
         bCredit = true;
     }else{
         bCredit = false;
     }
-    if(movieName == "twitter"){
+    if(movieName == "twitter.mp4"){
         bTw = true;
     }else{
         bTw = false;
     }
-    if(movieName == "facebook"){
+    if(movieName == "facebook.mp4"){
         bFb = true;
     }else{
         bFb = false;

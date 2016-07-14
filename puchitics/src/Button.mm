@@ -4,7 +4,7 @@ Button::Button(){
     ofSetRectMode(OF_RECTMODE_CENTER);
     bHover = false;
     bTouched = false;
-    hoverWidth = 8;
+    hoverWidth = 30;
     
     for (int i=0; i<2; i++) {
         ofEvent<int> tmp;
